@@ -5,11 +5,126 @@
     margin:0;
     box-sizing: border-box;
     font-family: 'JetBrains Mono', monospace ;
+ 
+    
+}
 
+.todo-app{
+    width: 100%;
+    max-width: 540px;
+    background: rgb(255, 255, 255);
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    text-align: center;
+    
 }
 .container{
     width: 100%;
     min-height: 100vh;
     background: linear-gradient(135deg,#153677,#4e085f);
+    font-size: 20px;
     padding: 10px;
+}
+
+.todo-app h2{
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 50px;
+    color:#153677;
+  }
+.motive{
+    font-size: 12px;
+    color:rgb(186, 186, 186);
+    margin-bottom: 10px;
+}
+ .quote{
+    font-style: italic;
+    background-image: linear-gradient(
+      to right, 
+      #e81416, 
+      #ffa500, 
+      #487de7,
+      #4b369d,
+      #70369d
+    );
+    font-size: 15px;
+    color: transparent;
+    -webkit-background-clip: text; /* Edge, Chrome */
+    background-clip: text; /* Safari, FF */
+    animation: gradientAnimation 8s linear infinite;
+    animation-direction: alternate;
+    background-size: 300% 100%;
+  }
+  
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0;
+    }
+    to {
+      background-position: 100%;
+    }
+  }
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(238, 238, 238);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+input{
+    flex:1;
+    border: none;
+    outline:none;
+    background: transparent;
+    padding:10px;
+}
+button{
+    border: none;
+    outline:none;
+    padding :16px 50px;
+    background:#ff453a;
+    font-size: 16px;
+    cursor: pointer;
+    color:white;
+    border-radius: 30px;
+}
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    text-align: left;
+    margin-top:10px;
+    position: relative;
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+ul li::before{
+    content: '';
+    position:absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-image: url(circle.svg);
+    background-size: cover;
+    background-position: center;
+    top:12px;
+    left:8px;
+
+}
+ul li.checked{
+    color:#555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(fill.svg);
 }
