@@ -1,4 +1,6 @@
-async function fetchQuote() {
+document.addEventListener('DOMContentLoaded', (event) => {
+async function fetchQuote() 
+{
     try {
         const response = await fetch('https://api.quotable.io/random');
         const data = await response.json();
@@ -13,3 +15,18 @@ async function fetchQuote() {
 
 // Fetch a quote when the page loads
 fetchQuote();
+document.getElementById('add-task-button').addEventListener('click', addTask);
+const inputBox = document.getElementById('input-box');
+const listContainer = document.getElementById('list-container');function addTask()
+{
+    if(inputBox.value === '')
+    {
+        alert("Please enter a task!");
+    }
+    else{
+        let li = document.createElement("li");
+        li.innerHTML = inputBox.value;
+        listContainer.appendChild(li);
+    }
+}
+});

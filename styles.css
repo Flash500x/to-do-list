@@ -82,6 +82,7 @@ input{
     outline:none;
     background: transparent;
     padding:10px;
+    font-size:15px;
 }
 button{
     border: none;
